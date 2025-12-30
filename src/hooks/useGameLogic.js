@@ -7,6 +7,17 @@ export const useGameLogic = (cardsValues) => {
     const [moves , setMoves] = useState(0);
     const [isLocked, setIsLocked] = useState(false);
     const initializeGame = () => {
+        // get previous theme from localStorage and apply it
+  const isPurple = localStorage.getItem("theme") === "purple";
+
+  // toggle theme
+  if (isPurple) {
+    document.body.classList.remove("purple-theme");
+    localStorage.setItem("theme", "pink");
+  } else {
+    document.body.classList.add("purple-theme");
+    localStorage.setItem("theme", "purple");
+  }
   const shuffledValues = [...cardsValues].sort(() => Math.random() - 0.5);
 
   const finalCards = shuffledValues.map((value, index) => ({
