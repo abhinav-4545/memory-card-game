@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +7,14 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
-  background: #0a0a0a;
+  font-family: "Baloo 2", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #171415;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  color: #fff;
+  color: #d4cc9efa;
 }
 
 #root {
@@ -33,18 +34,18 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background: rgba(15, 23, 42, 0.9);
+  background: #f6c1cc;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(246, 193, 204, 0.6);
   width: 100%;
   max-width: 600px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(246, 193, 204, 0.6);
 }
 
 .game-header h1 {
   font-size: 2.5rem;
-  color: #fff;
+  color: #7a2e4f;
   text-align: center;
 }
 
@@ -64,7 +65,7 @@ body {
 
 .stat-label {
   font-size: 0.9rem;
-  color: #a1a1aa;
+  color: #8a4a63;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -73,25 +74,25 @@ body {
 .stat-value {
   font-size: 2rem;
   font-weight: bold;
-  color: #818cf8;
+  color: #7a2e4f;
 }
 
 .reset-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
+  background: #e4aab6;
+  color: #5a2a3a;
+  border: 1px solid rgba(237, 214, 219, 0.7);
   padding: 12px 30px;
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(9, 7, 7, 0.6);
 }
 
 .reset-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(246, 193, 204, 0.8);
 }
 
 .reset-btn:active {
@@ -99,34 +100,24 @@ body {
 }
 
 .win-message {
-  background: rgba(15, 23, 42, 0.95);
+  background: #fdecef;
   padding: 30px 50px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(246, 193, 204, 0.6);
+  border: 1px solid rgba(246, 193, 204, 0.6);
   animation: slideDown 0.5s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .win-message h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  color: #7a2e4f;
 }
 
 .win-message p {
   font-size: 1.2rem;
-  color: #a1a1aa;
+  color: #8a4a63;
 }
 
 .cards-grid {
@@ -154,25 +145,25 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(246, 193, 204, 0.6);
   backface-visibility: hidden;
   transition: opacity 0.3s, transform 0.3s;
 }
 
 .card-front {
-  background: linear-gradient(to bottom, #0f172a, #0b0f1a);
-  color: white;
+  background: #f6c1cc;
+  color: #5a2a3a;
   font-weight: bold;
   font-size: 3rem;
   z-index: 1;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(246, 193, 204, 0.7);
 }
 
 .card-back {
-  background: #1e1e1e;
+  background: #fdecef;
   font-size: 4rem;
   z-index: 0;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(246, 193, 204, 0.7);
 }
 
 .card.flipped .card-front {
@@ -190,9 +181,9 @@ body {
 }
 
 .card.matched .card-back {
-  background: rgba(126, 211, 33, 0.2);
-  box-shadow: 0 0 20px rgba(126, 211, 33, 0.4);
-  border: 2px solid rgba(126, 211, 33, 0.5);
+  background: #f3aab8;
+  box-shadow: 0 0 20px rgba(243, 170, 184, 0.6);
+  border: 2px solid rgba(243, 170, 184, 0.7);
 }
 
 .card:hover:not(.matched):not(.flipped) .card-front {
@@ -247,4 +238,30 @@ body {
   .card-back {
     font-size: 2.5rem;
   }
+}
+/* 🌸 Purple Theme Toggle */
+body.purple-theme {
+  background: #f3e8ff;
+  color: #3b2f5c;
+}
+
+body.purple-theme .game-header,
+body.purple-theme .reset-btn,
+body.purple-theme .card-front {
+  background: #e9d5ff;
+}
+
+body.purple-theme .card-back,
+body.purple-theme .win-message {
+  background: #f5f0ff;
+}
+
+body.purple-theme .game-header h1,
+body.purple-theme .stat-value,
+body.purple-theme .win-message h2 {
+  color: #7c5cc4;
+}
+
+body.purple-theme .card-front {
+  color: #2b124c;
 }
